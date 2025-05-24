@@ -1,0 +1,4 @@
+window.addEventListener('message', function (event) {
+	console.log('Origin', event.origin);
+	console.log('Data', event.data);
+});

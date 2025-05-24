@@ -1,0 +1,14 @@
+<script>
+document.addEventListener('wpcf7mailsent', function(event) {
+  var responseObject = {};
+  for (var i = 0; i < event.detail.inputs.length; i++) {
+    responseObject[event.detail.inputs[i].name] = event.detail.inputs[i].value;
+  }
+
+  window.dataLayer.push({
+    "event": "cf7submission",
+    "formId": event.detail.contactFormId,
+    "response": responseObject
+  });
+});
+</script>
